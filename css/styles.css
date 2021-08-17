@@ -229,6 +229,7 @@ a {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  padding: 40px;
 }
 
 .close-button {
@@ -263,15 +264,16 @@ a {
 
 /* Modal form */
 
-.modal-form {
-  margin: 40px;
-}
-
-.modal-inputs {
+.modal-inputs,
+.modal-inputs-comment {
   position: relative;
   text-align: left;
   margin: 0;
   padding: 0;
+}
+
+.modal-inputs-comment {
+  margin-bottom: 20px;
 }
 
 .modal-inputs:not(:last-child) {
@@ -297,8 +299,14 @@ a {
   letter-spacing: 0.01em;
   display: flex;
   flex-direction: column;
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
   color: var(--primary-text-color);
+}
+
+.inputs-text {
+  margin-top: 4px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .inputs-form {
@@ -310,15 +318,15 @@ a {
   border-radius: 4px;
   padding: 12px 16px;
   padding-left: 42px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
-.modal-inputs:focus-within > .modal-icon {
+.inputs-text:focus-within > .modal-icon {
   fill: var(--accent-text-color);
 }
 
-.modal-inputs:focus-within > .inputs-form {
+.inputs-text:focus-within > .inputs-form {
   border: 1px solid var(--accent-text-color);
   outline: none;
 }
@@ -341,7 +349,7 @@ a {
   height: 120px;
 }
 
-.modal-inputs:focus-within > .inputs-form-comment {
+.inputs-text:focus-within > .inputs-form-comment {
   border: 1px solid var(--accent-text-color);
   outline: none;
 }
@@ -378,10 +386,10 @@ textarea {
   border-radius: 4px;
 }
 
-.modal-agreement {
+/* .modal-agreement {
   margin-top: 20px;
   margin-bottom: 30px;
-}
+} */
 
 /* checkbox */
 
@@ -775,7 +783,8 @@ textarea {
 /* button */
 
 .button.hero,
-.footer-button {
+.footer-button,
+.button-modal {
   color: var(--second-accent-text-color);
   background-color: var(--buttons-bg-color);
   font-weight: bold;
@@ -791,6 +800,10 @@ textarea {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   height: 50px;
+}
+
+.button-modal {
+  margin-top: 30px;
 }
 
 .primary {
